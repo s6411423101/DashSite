@@ -7,6 +7,7 @@ export default function SideNavbar({}: Props) {
   const [isCollapsed, setCollapsed] = useState(true);
   return (
     <div className="relative min-[80px] border-r px-3 pb-10 pt-24">
+      {/* has error with variant */}
       <button variant="secondary" className=" rounded-full">
         <ChevronRight />
       </button>
