@@ -2,23 +2,14 @@
 import { useState } from "react";
 import { Nav } from "./nav";
 type Props = {};
-import {
-  AlertCircle,
-  Archive,
-  ArchiveX,
-  File,
-  Inbox,
-  MessagesSquare,
-  Search,
-  Send,
-  ShoppingCart,
-  Trash2,
-  Users2,
-} from "lucide-react";
+import { ArchiveX, ChevronRight, File, Inbox, Send } from "lucide-react";
 export default function SideNavbar({}: Props) {
   const [isCollapsed, setCollapsed] = useState(true);
   return (
     <div className="relative min-[80px] border-r px-3 pb-10 pt-24">
+      <button variant="secondary" className=" rounded-full">
+        <ChevronRight />
+      </button>
       <Nav
         isCollapsed={isCollapsed}
         links={[

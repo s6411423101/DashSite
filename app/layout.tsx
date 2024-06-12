@@ -37,9 +37,7 @@ export default function RootLayout({
         </TooltipProvider>
 
         {/* main page */}
-        <div className="p-8 w-full">
-          <button> {children}</button>
-        </div>
+        <div className="p-8 w-full">{children}</div>
       </body>
     </html>
   );
