@@ -11,11 +11,11 @@ import {
 } from "lucide-react";
 import { useWindowWidth } from "@react-hook/window-size";
 import { Button } from "./button";
+
 export default function SideNavbar({}: Props) {
   const [isCollapsed, setIsCollapsed] = useState(false);
   const onlyWidth = useWindowWidth();
   const mobileWidth = onlyWidth < 768;
-
   function toggleSidebar() {
     setIsCollapsed(!isCollapsed);
   }
@@ -37,26 +37,26 @@ export default function SideNavbar({}: Props) {
         links={[
           {
             title: "Dashbord",
-            label: "",
             icon: CircleGauge,
+            href: "/dashbord",
             variant: "default",
           },
           {
             title: "Report",
-            label: "",
             icon: Newspaper,
+            href: "/report",
             variant: "ghost",
           },
           {
             title: "Export",
-            label: "",
             icon: FileUp,
+            href: "/export",
             variant: "ghost",
           },
           {
-            title: "setting",
-            label: "",
+            title: "Setting",
             icon: SlidersVertical,
+            href: "/setting",
             variant: "ghost",
           },
         ]}
