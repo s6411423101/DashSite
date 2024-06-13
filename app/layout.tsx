@@ -2,10 +2,9 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import { cn } from "@/lib/utils";
-import SideNavbar from "@/components/ui/SideNavbar";
-import { TooltipProvider } from "@/components/ui/TootipProvider";
-import { Tooltip } from "@radix-ui/react-tooltip";
+import { Tooltip, TooltipProvider } from "@radix-ui/react-tooltip";
+import { cn } from "../lib/utils";
+import SideNavbar from "../components/ui/SideNavbar";
 
 const inter = Inter({ subsets: ["latin"] });
 
