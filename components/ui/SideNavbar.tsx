@@ -56,7 +56,7 @@ export default function SideNavbar({}: Props) {
           {
             title: "Setting",
             icon: SlidersVertical,
-            href: "/setting",
+            href: "/settings",
             variant: "ghost",
           },
         ]}
