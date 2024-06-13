@@ -4,7 +4,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import { Tooltip, TooltipProvider } from "@radix-ui/react-tooltip";
 import { cn } from "../lib/utils";
-import SideNavbar from "../components/ui/SideNavbar";
+import SideNavbar from "../components/SideNavbar";
 import { Bluetooth } from "lucide-react";
 
 const inter = Inter({ subsets: ["latin"] });

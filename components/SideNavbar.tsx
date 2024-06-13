@@ -1,6 +1,5 @@
 "use client";
 import { useState } from "react";
-import { Nav } from "./nav";
 type Props = {};
 import {
   SlidersVertical,
@@ -10,7 +9,8 @@ import {
   FileUp,
 } from "lucide-react";
 import { useWindowWidth } from "@react-hook/window-size";
-import { Button } from "./button";
+import { Button } from "./ui/button";
+import { Nav } from "./ui/nav";
 
 export default function SideNavbar({}: Props) {
   const [isCollapsed, setIsCollapsed] = useState(false);
