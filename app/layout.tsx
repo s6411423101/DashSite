@@ -5,6 +5,7 @@ import "./globals.css";
 import { Tooltip, TooltipProvider } from "@radix-ui/react-tooltip";
 import { cn } from "../lib/utils";
 import SideNavbar from "../components/ui/SideNavbar";
+import { Bluetooth } from "lucide-react";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -15,26 +16,23 @@ const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
     <html lang="en">
       <body
         className={cn(
-          "min-h-screen w-full bg-white text-black flex",
+          "min-h-screen w-full bg-white text-black flex ",
           inter.className,
           {
-            "debug-screen": process.env.NODE_ENV === "development",
+            "debug-screens": process.env.NODE_ENV === "development",
           }
         )}
       >
         {/* sidebar */}
-        <TooltipProvider>
-          {" "}
-          <SideNavbar />
-        </TooltipProvider>
-
+        {/* <p className="border">Sidebar</p> */}
+        <SideNavbar />
         {/* main page */}
         <div className="p-8 w-full">{children}</div>
       </body>
