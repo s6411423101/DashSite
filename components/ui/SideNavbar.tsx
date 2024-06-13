@@ -2,40 +2,61 @@
 import { useState } from "react";
 import { Nav } from "./nav";
 type Props = {};
-import { ArchiveX, ChevronRight, File, Inbox, Send } from "lucide-react";
+import {
+  SlidersVertical,
+  ChevronRight,
+  Newspaper,
+  CircleGauge,
+  FileUp,
+} from "lucide-react";
+import { useWindowWidth } from "@react-hook/window-size";
+import { Button } from "./button";
 export default function SideNavbar({}: Props) {
-  const [isCollapsed, setCollapsed] = useState(true);
+  const [isCollapsed, setIsCollapsed] = useState(false);
+  const onlyWidth = useWindowWidth();
+  const mobileWidth = onlyWidth < 768;
+
+  function toggleSidebar() {
+    setIsCollapsed(!isCollapsed);
+  }
   return (
-    <div className="relative min-[80px] border-r px-3 pb-10 pt-24">
-      {/* has error with variant */}
-      <button variant="secondary" className=" rounded-full">
-        <ChevronRight />
-      </button>
+    <div className="relative min-w-[80px] border-r px-3  pb-10 pt-24 ">
+      {!mobileWidth && (
+        <div className="absolute right-[-20px] top-7">
+          <Button
+            onClick={toggleSidebar}
+            variant="secondary"
+            className=" rounded-full p-2"
+          >
+            <ChevronRight />
+          </Button>
+        </div>
+      )}
       <Nav
-        isCollapsed={isCollapsed}
+        isCollapsed={mobileWidth ? true : isCollapsed}
         links={[
           {
-            title: "Inbox",
-            label: "128",
-            icon: Inbox,
+            title: "Dashbord",
+            label: "",
+            icon: CircleGauge,
             variant: "default",
           },
           {
-            title: "Drafts",
-            label: "9",
-            icon: File,
-            variant: "ghost",
-          },
-          {
-            title: "Sent",
+            title: "Report",
             label: "",
-            icon: Send,
+            icon: Newspaper,
             variant: "ghost",
           },
           {
-            title: "Junk",
-            label: "23",
-            icon: ArchiveX,
+            title: "Export",
+            label: "",
+            icon: FileUp,
+            variant: "ghost",
+          },
+          {
+            title: "setting",
+            label: "",
+            icon: SlidersVertical,
             variant: "ghost",
           },
         ]}

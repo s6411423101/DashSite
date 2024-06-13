@@ -2,15 +2,13 @@
 
 import Link from "next/link";
 import { LucideIcon } from "lucide-react";
-
-import { cn } from "@/lib/utils";
-import { buttonVariants } from "@/components/ui/button";
+import { cn } from "../../lib/utils";
 import {
   Tooltip,
   TooltipContent,
   TooltipTrigger,
   TooltipProvider,
-} from "@/components/ui/tooltip";
+} from "./tooltip";
 
 interface NavProps {
   isCollapsed: boolean;
@@ -21,6 +19,7 @@ interface NavProps {
     variant: "default" | "ghost";
   }[];
 }
+import { buttonVariants } from "./button";
 
 export function Nav({ links, isCollapsed }: NavProps) {
   return (
