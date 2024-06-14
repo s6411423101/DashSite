@@ -31,7 +31,6 @@ export default function RootLayout({
         )}
       >
         {/* sidebar */}
-        {/* <p className="border">Sidebar</p> */}
         <div className="border">
           <SideNavbar />
         </div>
