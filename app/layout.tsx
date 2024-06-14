@@ -10,7 +10,7 @@ import { Bluetooth } from "lucide-react";
 const inter = Inter({ subsets: ["latin"] });
 
 const metadata: Metadata = {
-  title: "Dashbord",
+  title: "Data Static Dashbord",
   description: "THAILAND PHUKET DASHBORD BY PHUKET RAJAPHAT UNIVERSITY",
 };
 
