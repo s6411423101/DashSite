@@ -1,3 +1,9 @@
+import PageTitle from "../components/PageTitle";
+
 export default function Home() {
-  return <div>Home Page</div>;
+  return (
+    <div className="flex flex-col gap-5  w-full">
+      <PageTitle title="Dashboard" />
+    </div>
+  );
 }

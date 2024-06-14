@@ -1,5 +1,9 @@
+/** @format */
 "use client";
+
 import { useState } from "react";
+import { Nav } from "./ui/nav";
+
 type Props = {};
 import {
   SlidersVertical,
@@ -8,17 +12,20 @@ import {
   CircleGauge,
   FileUp,
 } from "lucide-react";
-import { useWindowWidth } from "@react-hook/window-size";
 import { Button } from "./ui/button";
-import { Nav } from "./ui/nav";
+
+import { useWindowWidth } from "@react-hook/window-size";
 
 export default function SideNavbar({}: Props) {
   const [isCollapsed, setIsCollapsed] = useState(false);
+
   const onlyWidth = useWindowWidth();
   const mobileWidth = onlyWidth < 768;
+
   function toggleSidebar() {
     setIsCollapsed(!isCollapsed);
   }
+
   return (
     <div className="relative min-w-[80px] border-r px-3  pb-10 pt-24 ">
       {!mobileWidth && (
@@ -56,7 +63,7 @@ export default function SideNavbar({}: Props) {
           {
             title: "Setting",
             icon: SlidersVertical,
-            href: "/settings",
+            href: "/setting",
             variant: "ghost",
           },
         ]}

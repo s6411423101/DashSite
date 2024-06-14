@@ -4,16 +4,20 @@
 
 import Link from "next/link";
 import { LucideIcon } from "lucide-react";
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipProvider,
-  TooltipTrigger,
-} from "@radix-ui/react-tooltip";
+
+// import { buttonVariants } from "@/components/ui/button";
+// import {
+//   Tooltip,
+//   TooltipContent,
+//   TooltipTrigger,
+// } from "@/components/ui/tooltip";
+
+import { TooltipProvider } from "@radix-ui/react-tooltip";
 import { usePathname } from "next/navigation";
 import { cn } from "../../lib/utils";
 import { buttonVariants } from "./button";
-import { useRouter } from "next/navigation";
+import { Tooltip, TooltipContent, TooltipTrigger } from "./tooltip";
+
 interface NavProps {
   isCollapsed: boolean;
   links: {
@@ -26,7 +30,6 @@ interface NavProps {
 }
 
 export function Nav({ links, isCollapsed }: NavProps) {
-  const router = useRouter();
   const pathName = usePathname();
   return (
     <TooltipProvider>
@@ -39,8 +42,8 @@ export function Nav({ links, isCollapsed }: NavProps) {
             isCollapsed ? (
               <Tooltip key={index} delayDuration={0}>
                 <TooltipTrigger asChild>
-                  <button
-                    onClick={() => router.push(link.href)}
+                  <Link
+                    href={link.href}
                     className={cn(
                       buttonVariants({
                         variant: link.href === pathName ? "default" : "ghost",
@@ -53,7 +56,7 @@ export function Nav({ links, isCollapsed }: NavProps) {
                   >
                     <link.icon className="h-4 w-4" />
                     <span className="sr-only">{link.title}</span>
-                  </button>
+                  </Link>
                 </TooltipTrigger>
                 <TooltipContent
                   side="right"
@@ -68,9 +71,9 @@ export function Nav({ links, isCollapsed }: NavProps) {
                 </TooltipContent>
               </Tooltip>
             ) : (
-              <button
+              <Link
                 key={index}
-                onClick={() => router.push(link.href)}
+                href={link.href}
                 className={cn(
                   buttonVariants({
                     variant: link.href === pathName ? "default" : "ghost",
@@ -94,7 +97,7 @@ export function Nav({ links, isCollapsed }: NavProps) {
                     {link.label}
                   </span>
                 )}
-              </button>
+              </Link>
             )
           )}
         </nav>
