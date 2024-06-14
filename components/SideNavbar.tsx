@@ -44,7 +44,7 @@ export default function SideNavbar({}: Props) {
           {
             title: "Dashbord",
             icon: CircleGauge,
-            href: "/Dashbord",
+            href: "/dashbord",
             variant: "default",
           },
           {
