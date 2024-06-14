@@ -1,17 +1,6 @@
-/** @format */
-
 "use client";
-
 import Link from "next/link";
 import { LucideIcon } from "lucide-react";
-
-// import { buttonVariants } from "@/components/ui/button";
-// import {
-//   Tooltip,
-//   TooltipContent,
-//   TooltipTrigger,
-// } from "@/components/ui/tooltip";
-
 import { TooltipProvider } from "@radix-ui/react-tooltip";
 import { usePathname } from "next/navigation";
 import { cn } from "../../lib/utils";
