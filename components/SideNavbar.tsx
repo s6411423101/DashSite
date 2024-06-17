@@ -26,20 +26,8 @@ export default function SideNavbar({}: Props) {
   }
 
   return (
-    <div className="relative min-w-[200px] border-r px-7  pb-20 pt-40">
-      {!mobileWidth && (
-        <div className="absolute right-[-20px] top-7">
-          <Button
-            onClick={toggleSidebar}
-            variant="secondary"
-            className=" rounded-full p-2"
-          >
-            <ChevronRight />
-          </Button>
-        </div>
-      )}
+    <div className="relative min-w-[150px] border-r px-7  pb-20 pt-40">
       <Nav
-        isCollapsed={mobileWidth ? true : isCollapsed}
         links={[
           {
             title: "Dashbord",
@@ -66,6 +54,7 @@ export default function SideNavbar({}: Props) {
             variant: "ghost",
           },
         ]}
+        isCollapsed={false}
       />
     </div>
   );

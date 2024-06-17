@@ -38,7 +38,7 @@ export function Nav({ links, isCollapsed }: NavProps) {
                         variant: link.href === pathName ? "default" : "ghost",
                         size: "icon",
                       }),
-                      "h-9 w-9",
+                      "h-20 w-28",
                       link.variant === "default" &&
                         "dark:bg-muted dark:text-muted-foreground dark:hover:bg-muted dark:hover:text-white"
                     )}
