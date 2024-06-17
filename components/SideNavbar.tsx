@@ -20,9 +20,9 @@ export default function SideNavbar({}: Props) {
   }
 
   return (
-    <div className="relative min-w-[150px] border-r px-9  pb-11 pt-16">
+    <div className=" border-r px-9  pb-11 pt-16">
       <Image src="/pkru.png" width={170} height={200} alt="PKRU LOGO" />
-      <div className="pt-20">
+      <div className="relative min-w-[150px] pt-11">
         <Nav
           links={[
             {
